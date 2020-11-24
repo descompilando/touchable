@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:touchable/src/shapes/clip.dart';
+import '../shapes/clip.dart';
 
 typedef CustomTouchPaintBuilder = CustomPaint Function(BuildContext context);
 
@@ -38,7 +38,9 @@ enum GestureType {
   onForcePressUpdate,
   onPanStart,
   onPanUpdate,
+  onPanUpdateOutside,
   onPanDown,
+  onPanEnd,
   onSecondaryTapDown,
   onSecondaryTapUp,
 }

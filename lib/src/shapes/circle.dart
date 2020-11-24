@@ -2,9 +2,9 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:touchable/src/shapes/constant.dart';
-import 'package:touchable/src/shapes/shape.dart';
-import 'package:touchable/src/types/types.dart';
+import '../shapes/constant.dart';
+import '../shapes/shape.dart';
+import '../types/types.dart';
 
 class Circle extends Shape {
   final Offset center;

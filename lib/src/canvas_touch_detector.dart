@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:touchable/src/types/types.dart';
+import 'types/types.dart';
 
 ///[CanvasTouchDetector] widget detects the gestures on your [CustomPaint] widget.
 ///
@@ -98,9 +98,13 @@ class _CanvasTouchDetectorState extends State<CanvasTouchDetector> {
           },
           onPanUpdate: (tapDetail) {
             touchController.add(Gesture(GestureType.onPanUpdate, tapDetail));
+            touchController.add(Gesture(GestureType.onPanUpdateOutside, tapDetail));
           },
           onPanDown: (tapDetail) {
             touchController.add(Gesture(GestureType.onPanDown, tapDetail));
+          },
+          onPanEnd: (tapDetail) {
+            touchController.add(Gesture(GestureType.onPanEnd, tapDetail));
           },
           onSecondaryTapDown: (tapDetail) {
             touchController

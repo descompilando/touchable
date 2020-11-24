@@ -1,10 +1,10 @@
 import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
-import 'package:touchable/src/shapes/circle.dart';
-import 'package:touchable/src/shapes/line.dart';
-import 'package:touchable/src/shapes/shape.dart';
-import 'package:touchable/src/types/types.dart';
+import '../shapes/circle.dart';
+import '../shapes/line.dart';
+import '../shapes/shape.dart';
+import '../types/types.dart';
 
 class Point extends Shape {
   final PointMode pointMode;

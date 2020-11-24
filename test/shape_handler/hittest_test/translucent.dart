@@ -3,15 +3,15 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:touchable/src/shape_handler.dart';
-import 'package:touchable/src/shapes/arc.dart';
-import 'package:touchable/src/shapes/circle.dart';
-import 'package:touchable/src/shapes/line.dart';
-import 'package:touchable/src/shapes/oval.dart';
-import 'package:touchable/src/shapes/point.dart';
-import 'package:touchable/src/shapes/rectangle.dart';
-import 'package:touchable/src/shapes/rounded_rectangle.dart';
-import 'package:touchable/src/shapes/util.dart';
+import '../shape_handler.dart';
+import '../shapes/arc.dart';
+import '../shapes/circle.dart';
+import '../shapes/line.dart';
+import '../shapes/oval.dart';
+import '../shapes/point.dart';
+import '../shapes/rectangle.dart';
+import '../shapes/rounded_rectangle.dart';
+import '../shapes/util.dart';
 import 'package:touchable/touchable.dart';
 
 void testTranslucent() {

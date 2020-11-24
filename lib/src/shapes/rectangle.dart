@@ -1,8 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
-import 'package:touchable/src/shapes/shape.dart';
-import 'package:touchable/src/types/types.dart';
+import '../shapes/shape.dart';
+import '../types/types.dart';
 
 class Rectangle extends Shape {
   final Rect rect;

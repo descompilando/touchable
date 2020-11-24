@@ -2,7 +2,7 @@ import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:touchable/src/types/types.dart';
+import '../types/types.dart';
 
 class ShapeUtil {
   static double distance(Offset p1, Offset p2) {
@@ -23,6 +23,8 @@ class TouchCanvasUtil {
         return (gestureDetail as DragDownDetails).localPosition;
       case DragStartDetails:
         return (gestureDetail as DragStartDetails).localPosition;
+      case DragEndDetails:
+        return (gestureDetail as DragEndDetails).velocity.pixelsPerSecond;
       case DragUpdateDetails:
         return (gestureDetail as DragUpdateDetails).localPosition;
       case LongPressStartDetails:
@@ -55,7 +57,9 @@ class TouchCanvasUtil {
     @required GestureForcePressUpdateCallback onForcePressUpdate,
     @required GestureDragStartCallback onPanStart,
     @required GestureDragUpdateCallback onPanUpdate,
+    @required GestureDragUpdateCallback onPanUpdateOutside,
     @required GestureDragDownCallback onPanDown,
+    @required GestureDragEndCallback onPanEnd,
     @required GestureTapDownCallback onSecondaryTapDown,
     @required GestureTapUpCallback onSecondaryTapUp,
   }) {
@@ -85,8 +89,12 @@ class TouchCanvasUtil {
       map.putIfAbsent(GestureType.onPanStart, () => onPanStart);
     if (onPanUpdate != null)
       map.putIfAbsent(GestureType.onPanUpdate, () => onPanUpdate);
+    if (onPanUpdateOutside != null)
+      map.putIfAbsent(GestureType.onPanUpdateOutside, () => onPanUpdateOutside);
     if (onPanDown != null)
       map.putIfAbsent(GestureType.onPanDown, () => onPanDown);
+    if (onPanEnd != null)
+      map.putIfAbsent(GestureType.onPanEnd, () => onPanEnd);
 
     if (onSecondaryTapDown != null)
       map.putIfAbsent(GestureType.onSecondaryTapDown, () => onSecondaryTapDown);

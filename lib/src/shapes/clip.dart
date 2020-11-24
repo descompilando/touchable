@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
-import 'package:touchable/src/shapes/shape.dart';
+import '../shapes/shape.dart';
 
 abstract class ClipShape extends Shape {}
 

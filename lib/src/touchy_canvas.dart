@@ -4,18 +4,18 @@ import 'dart:ui';
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart' hide Image;
-import 'package:touchable/src/canvas_touch_detector.dart';
-import 'package:touchable/src/shape_handler.dart';
-import 'package:touchable/src/shapes/arc.dart';
-import 'package:touchable/src/shapes/circle.dart';
-import 'package:touchable/src/shapes/clip.dart';
-import 'package:touchable/src/shapes/line.dart';
-import 'package:touchable/src/shapes/oval.dart';
-import 'package:touchable/src/shapes/path.dart';
-import 'package:touchable/src/shapes/point.dart';
-import 'package:touchable/src/shapes/rectangle.dart';
-import 'package:touchable/src/shapes/rounded_rectangle.dart';
-import 'package:touchable/src/shapes/util.dart';
+import 'canvas_touch_detector.dart';
+import 'shape_handler.dart';
+import 'shapes/arc.dart';
+import 'shapes/circle.dart';
+import 'shapes/clip.dart';
+import 'shapes/line.dart';
+import 'shapes/oval.dart';
+import 'shapes/path.dart';
+import 'shapes/point.dart';
+import 'shapes/rectangle.dart';
+import 'shapes/rounded_rectangle.dart';
+import 'shapes/util.dart';
 
 class TouchyCanvas {
   final Canvas _canvas;
@@ -65,7 +65,9 @@ class TouchyCanvas {
     GestureForcePressUpdateCallback onForcePressUpdate,
     GestureDragStartCallback onPanStart,
     GestureDragUpdateCallback onPanUpdate,
+    GestureDragUpdateCallback onPanUpdateOutside,
     GestureDragDownCallback onPanDown,
+    GestureDragEndCallback onPanEnd,
     GestureTapDownCallback onSecondaryTapDown,
     GestureTapUpCallback onSecondaryTapUp,
   }) {
@@ -87,7 +89,9 @@ class TouchyCanvas {
           onForcePressUpdate: onForcePressUpdate,
           onPanStart: onPanStart,
           onPanUpdate: onPanUpdate,
+          onPanUpdateOutside: onPanUpdateOutside,
           onPanDown: onPanDown,
+          onPanEnd: onPanEnd,
           onSecondaryTapDown: onSecondaryTapDown,
           onSecondaryTapUp: onSecondaryTapUp,
         )));
@@ -110,7 +114,9 @@ class TouchyCanvas {
     GestureForcePressUpdateCallback onForcePressUpdate,
     GestureDragStartCallback onPanStart,
     GestureDragUpdateCallback onPanUpdate,
+    GestureDragUpdateCallback onPanUpdateOutside,
     GestureDragDownCallback onPanDown,
+    GestureDragEndCallback onPanEnd,
     GestureTapDownCallback onSecondaryTapDown,
     GestureTapUpCallback onSecondaryTapUp,
   }) {
@@ -130,7 +136,9 @@ class TouchyCanvas {
           onForcePressUpdate: onForcePressUpdate,
           onPanStart: onPanStart,
           onPanUpdate: onPanUpdate,
+          onPanUpdateOutside: onPanUpdateOutside,
           onPanDown: onPanDown,
+          onPanEnd: onPanEnd,
           onSecondaryTapDown: onSecondaryTapDown,
           onSecondaryTapUp: onSecondaryTapUp,
         )));
@@ -152,7 +160,9 @@ class TouchyCanvas {
     GestureForcePressUpdateCallback onForcePressUpdate,
     GestureDragStartCallback onPanStart,
     GestureDragUpdateCallback onPanUpdate,
+    GestureDragUpdateCallback onPanUpdateOutside,
     GestureDragDownCallback onPanDown,
+    GestureDragEndCallback onPanEnd,
     GestureTapDownCallback onSecondaryTapDown,
     GestureTapUpCallback onSecondaryTapUp,
   }) {
@@ -172,7 +182,9 @@ class TouchyCanvas {
           onForcePressUpdate: onForcePressUpdate,
           onPanStart: onPanStart,
           onPanUpdate: onPanUpdate,
+          onPanUpdateOutside: onPanUpdateOutside,
           onPanDown: onPanDown,
+          onPanEnd: onPanEnd,
           onSecondaryTapDown: onSecondaryTapDown,
           onSecondaryTapUp: onSecondaryTapUp,
         )));
@@ -200,7 +212,9 @@ class TouchyCanvas {
     GestureForcePressUpdateCallback onForcePressUpdate,
     GestureDragStartCallback onPanStart,
     GestureDragUpdateCallback onPanUpdate,
+    GestureDragUpdateCallback onPanUpdateOutside,
     GestureDragDownCallback onPanDown,
+    GestureDragEndCallback onPanEnd,
     GestureTapDownCallback onSecondaryTapDown,
     GestureTapUpCallback onSecondaryTapUp,
   }) {
@@ -220,7 +234,9 @@ class TouchyCanvas {
           onForcePressUpdate: onForcePressUpdate,
           onPanStart: onPanStart,
           onPanUpdate: onPanUpdate,
+          onPanUpdateOutside: onPanUpdateOutside,
           onPanDown: onPanDown,
+          onPanEnd: onPanEnd,
           onSecondaryTapDown: onSecondaryTapDown,
           onSecondaryTapUp: onSecondaryTapUp,
         )));
@@ -243,7 +259,9 @@ class TouchyCanvas {
     GestureForcePressUpdateCallback onForcePressUpdate,
     GestureDragStartCallback onPanStart,
     GestureDragUpdateCallback onPanUpdate,
+    GestureDragUpdateCallback onPanUpdateOutside,
     GestureDragDownCallback onPanDown,
+    GestureDragEndCallback onPanEnd,
     GestureTapDownCallback onSecondaryTapDown,
     GestureTapUpCallback onSecondaryTapUp,
   }) {
@@ -263,7 +281,9 @@ class TouchyCanvas {
           onForcePressUpdate: onForcePressUpdate,
           onPanStart: onPanStart,
           onPanUpdate: onPanUpdate,
+          onPanUpdateOutside: onPanUpdateOutside,
           onPanDown: onPanDown,
+          onPanEnd: onPanEnd,
           onSecondaryTapDown: onSecondaryTapDown,
           onSecondaryTapUp: onSecondaryTapUp,
         )));
@@ -285,7 +305,9 @@ class TouchyCanvas {
     GestureForcePressUpdateCallback onForcePressUpdate,
     GestureDragStartCallback onPanStart,
     GestureDragUpdateCallback onPanUpdate,
+    GestureDragUpdateCallback onPanUpdateOutside,
     GestureDragDownCallback onPanDown,
+    GestureDragEndCallback onPanEnd,
     GestureTapDownCallback onSecondaryTapDown,
     GestureTapUpCallback onSecondaryTapUp,
   }) {
@@ -305,7 +327,9 @@ class TouchyCanvas {
           onForcePressUpdate: onForcePressUpdate,
           onPanStart: onPanStart,
           onPanUpdate: onPanUpdate,
+          onPanUpdateOutside: onPanUpdateOutside,
           onPanDown: onPanDown,
+          onPanEnd: onPanEnd,
           onSecondaryTapDown: onSecondaryTapDown,
           onSecondaryTapUp: onSecondaryTapUp,
         )));
@@ -328,7 +352,9 @@ class TouchyCanvas {
     GestureForcePressUpdateCallback onForcePressUpdate,
     GestureDragStartCallback onPanStart,
     GestureDragUpdateCallback onPanUpdate,
+    GestureDragUpdateCallback onPanUpdateOutside,
     GestureDragDownCallback onPanDown,
+    GestureDragEndCallback onPanEnd,
     GestureTapDownCallback onSecondaryTapDown,
     GestureTapUpCallback onSecondaryTapUp,
   }) {
@@ -352,7 +378,9 @@ class TouchyCanvas {
           onForcePressUpdate: onForcePressUpdate,
           onPanStart: onPanStart,
           onPanUpdate: onPanUpdate,
+          onPanUpdateOutside: onPanUpdateOutside,
           onPanDown: onPanDown,
+          onPanEnd: onPanEnd,
           onSecondaryTapDown: onSecondaryTapDown,
           onSecondaryTapUp: onSecondaryTapUp,
         )));
@@ -374,7 +402,9 @@ class TouchyCanvas {
     GestureForcePressUpdateCallback onForcePressUpdate,
     GestureDragStartCallback onPanStart,
     GestureDragUpdateCallback onPanUpdate,
+    GestureDragUpdateCallback onPanUpdateOutside,
     GestureDragDownCallback onPanDown,
+    GestureDragEndCallback onPanEnd,
     GestureTapDownCallback onSecondaryTapDown,
     GestureTapUpCallback onSecondaryTapUp,
   }) {
@@ -394,7 +424,9 @@ class TouchyCanvas {
           onForcePressUpdate: onForcePressUpdate,
           onPanStart: onPanStart,
           onPanUpdate: onPanUpdate,
+          onPanUpdateOutside: onPanUpdateOutside,
           onPanDown: onPanDown,
+          onPanEnd: onPanEnd,
           onSecondaryTapDown: onSecondaryTapDown,
           onSecondaryTapUp: onSecondaryTapUp,
         )));
@@ -423,7 +455,9 @@ class TouchyCanvas {
     GestureForcePressUpdateCallback onForcePressUpdate,
     GestureDragStartCallback onPanStart,
     GestureDragUpdateCallback onPanUpdate,
+    GestureDragUpdateCallback onPanUpdateOutside,
     GestureDragDownCallback onPanDown,
+    GestureDragEndCallback onPanEnd,
     GestureTapDownCallback onSecondaryTapDown,
     GestureTapUpCallback onSecondaryTapUp,
   }) {
@@ -445,7 +479,9 @@ class TouchyCanvas {
           onForcePressUpdate: onForcePressUpdate,
           onPanStart: onPanStart,
           onPanUpdate: onPanUpdate,
+          onPanUpdateOutside: onPanUpdateOutside,
           onPanDown: onPanDown,
+          onPanEnd: onPanEnd,
           onSecondaryTapDown: onSecondaryTapDown,
           onSecondaryTapUp: onSecondaryTapUp,
         )));
@@ -471,6 +507,7 @@ class TouchyCanvas {
     GestureDragStartCallback onPanStart,
     GestureDragUpdateCallback onPanUpdate,
     GestureDragDownCallback onPanDown,
+    GestureDragEndCallback onPanEnd,
     GestureTapDownCallback onSecondaryTapDown,
     GestureTapUpCallback onSecondaryTapUp,
   }) {
@@ -490,7 +527,9 @@ class TouchyCanvas {
             onForcePressUpdate: null,
             onPanStart: null,
             onPanUpdate: null,
+            onPanUpdateOutside: null,
             onPanDown: null,
+            onPanEnd: null,
             onSecondaryTapDown: null,
             onSecondaryTapUp: null));
     _shapeHandler.addShape(arc);

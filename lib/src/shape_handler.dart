@@ -1,10 +1,10 @@
 import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
-import 'package:touchable/src/shapes/clip.dart';
-import 'package:touchable/src/shapes/shape.dart';
-import 'package:touchable/src/shapes/util.dart';
-import 'package:touchable/src/types/types.dart';
+import 'shapes/clip.dart';
+import 'shapes/shape.dart';
+import 'shapes/util.dart';
+import 'types/types.dart';
 
 class ShapeHandler {
   final List<Shape> _shapeStack = [];
@@ -73,6 +73,17 @@ class ShapeHandler {
     var touchPoint =
         TouchCanvasUtil.getPointFromGestureDetail(gesture.gestureDetail);
     if (!_registeredGestures.contains(gesture.gestureType)) return;
+
+    if(gesture.gestureType == GestureType.onPanUpdateOutside
+    || gesture.gestureType == GestureType.onPanEnd) {
+      for (int i = _shapeStack.length - 1; i >= 0; i--) {
+        var shape = _shapeStack[i];
+        if (shape.registeredGestures.contains(gesture.gestureType)) {
+          var callback = shape.getCallbackFromGesture(gesture);
+          callback();
+        }
+      }
+    }
 
     var touchedShapes = _getTouchedShapes(touchPoint);
     if (touchedShapes.isEmpty) return;

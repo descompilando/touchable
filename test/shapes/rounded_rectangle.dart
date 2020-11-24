@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:touchable/src/shapes/rounded_rectangle.dart';
+import '../shapes/rounded_rectangle.dart';
 
 void testRoundedRectangle() {
   test('Filled Rounded Rectangle test : Point lies inside ', () {

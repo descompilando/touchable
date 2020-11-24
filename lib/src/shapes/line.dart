@@ -1,10 +1,10 @@
 import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
-import 'package:touchable/src/shapes/constant.dart';
-import 'package:touchable/src/shapes/shape.dart';
-import 'package:touchable/src/shapes/util.dart';
-import 'package:touchable/src/types/types.dart';
+import '../shapes/constant.dart';
+import '../shapes/shape.dart';
+import '../shapes/util.dart';
+import '../types/types.dart';
 
 class Line extends Shape {
   final Offset p1;
